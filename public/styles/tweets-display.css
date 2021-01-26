@@ -3,6 +3,10 @@ article.tweet {
   margin: 1em 0em;
 }
 
+article.tweet:hover {
+  box-shadow: 10px 10px #A9A9A9;
+}
+
 article.tweet header {
   display: flex;
   justify-content: space-between;
@@ -20,6 +24,7 @@ article.tweet header p {
 article.tweet header h4 {
   margin: 1em;
   color: #A9A9A9;
+  display: none;
 }
 
 article.tweet p.tweet-content {
@@ -40,4 +45,8 @@ article.tweet footer p {
 
 article.tweet footer div {
   color: #4056a1;
+}
+
+article.tweet footer div .fas {
+
 }
