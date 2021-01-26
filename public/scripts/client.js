@@ -33,6 +33,21 @@ $(document).ready(function() {
       $('#tweets-container').append($tweet);
     }
   };
+
+  $('.tweet-form').submit(function(event) {
+    console.log('Button clicked, performing ajax call...')
+    event.preventDefault();
+    const $tweetBox = $(this).find('#tweet-text');
+    const tweetSerialized = $tweetBox.serialize();
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: tweetSerialized
+    })
+      .then(function(data) {
+        console.log('Success')
+      })
+  });
 });
 
 // Test / driver code (temporary). Eventually will get this from the server.
@@ -47,5 +62,3 @@ const tweetData = {
     },
   "created_at": 1461116232227
 }
-
-renderTweets(arrTweetObjs);
