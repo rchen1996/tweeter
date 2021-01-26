@@ -7,6 +7,10 @@ article.tweet:hover {
   box-shadow: 10px 10px #A9A9A9;
 }
 
+article.tweet:hover .handle {
+  display: block;
+}
+
 article.tweet header {
   display: flex;
   justify-content: space-between;
@@ -17,11 +21,12 @@ article.tweet header img {
   margin: 1em;
 }
 
-article.tweet header p {
+article.tweet header .user {
   flex-grow: 2;
+  font-weight: 300;
 }
 
-article.tweet header h4 {
+article.tweet header .handle {
   margin: 1em;
   color: #A9A9A9;
   display: none;
@@ -39,14 +44,10 @@ article.tweet footer {
   align-items: center;
 }
 
-article.tweet footer p {
+article.tweet footer .timestamp {
   font-size: smaller;
 }
 
-article.tweet footer div {
+article.tweet footer .icons {
   color: #4056a1;
-}
-
-article.tweet footer div .fas {
-
 }
