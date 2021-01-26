@@ -35,21 +35,26 @@ $(document).ready(function() {
   };
 
   $('.tweet-form').submit(function(event) {
-    console.log('Button clicked, performing ajax call...')
     event.preventDefault();
     const $tweetBox = $(this).find('#tweet-text');
-    const tweetSerialized = $tweetBox.serialize();
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: tweetSerialized
-    })
-      .then(data => {
-        console.log('Success')
+    if ($tweetBox.val() === "") {
+      alert('You cannot send an empty tweet!')
+    } else if ($tweetBox.val().length > 140) {
+      alert('Your message is too long!')
+    } else {
+      const tweetSerialized = $tweetBox.serialize();
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: tweetSerialized
       })
-      .catch(err => {
-        console.log(err)
-      })
+        .then(data => {
+          console.log('Success')
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   });
 
   const loadTweets = function() {
