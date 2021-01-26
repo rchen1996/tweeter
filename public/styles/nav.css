@@ -1,0 +1,14 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+span {
+  font-family: 'Bungee', sans-serif;
+  margin: 1.5em;
+}
