@@ -44,21 +44,30 @@ $(document).ready(function() {
       url: '/tweets',
       data: tweetSerialized
     })
-      .then(function(data) {
+      .then(data => {
         console.log('Success')
       })
+      .catch(err => {
+        console.log(err)
+      })
   });
+
+  const loadTweets = function() {
+    // fetch tweets from http://localhost:8080/tweets
+    // use jQuery to make a request to /tweets
+    // receive array of tweets as JSON
+    $.ajax({
+      method: 'GET',
+      url: '/tweets'
+    })
+      .then(data => {
+        renderTweets(data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  };
+
+  loadTweets();
 });
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
