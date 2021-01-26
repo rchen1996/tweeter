@@ -30,6 +30,7 @@ article.tweet header .handle {
   margin: 1em;
   color: #A9A9A9;
   display: none;
+  font-weight: 700;
 }
 
 article.tweet p.tweet-content {
