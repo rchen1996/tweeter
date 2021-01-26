@@ -5,8 +5,8 @@
  */
 
 $(document).ready(function() {
-  const createTweetElement = function (tweetObj) {
-    const tweet = `
+  const createTweetElement = function(tweetObj) {
+    let $tweet = `
     <article class="tweet">
       <header>
         <img src="${tweetObj.user.avatars}">
@@ -24,7 +24,14 @@ $(document).ready(function() {
       </footer>
     </article>
     `;
-    return tweet;
+    return $tweet;
+  };
+
+  const renderTweets = function(arrTweetObjs) {
+    for (let tweetObj of arrTweetObjs) {
+      let $tweet = createTweetElement(tweetObj);
+      $('#tweets-container').append($tweet);
+    }
   };
 });
 
@@ -41,8 +48,4 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
-const $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+renderTweets(arrTweetObjs);
