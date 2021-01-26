@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets-display.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1d6cd369b1.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -31,7 +33,7 @@
       <span>Tweeter</span>
     </nav>
 
-    <header>
+    <header class="profile">
       <div>
         <img src="/images/profile-hex.png">
       </div>
@@ -53,6 +55,25 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <section class="tweets-container">
+        <article class="tweet">
+          <header>
+            <img src="https://i.imgur.com/nlhLi3I.png">
+            <p>Rebecca</p>
+            <h4>@Rchen</h4>
+          </header>
+          <p class="tweet-content">This is the content of the tweet!</p>
+          <footer>
+            <p>10 days ago</p>
+            <div>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
