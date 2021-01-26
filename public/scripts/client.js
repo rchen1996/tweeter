@@ -30,7 +30,7 @@ $(document).ready(function() {
   const renderTweets = function(arrTweetObjs) {
     for (let tweetObj of arrTweetObjs) {
       let $tweet = createTweetElement(tweetObj);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
 
