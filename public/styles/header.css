@@ -1,11 +1,11 @@
-header {
+header.profile {
   height: 400px;
   width: 100%;
   background-color: #ECEEFF;
   background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
 }
 
-div {
+header div {
   display: flex;
   justify-content: center;
   align-items: center;
