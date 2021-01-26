@@ -53,9 +53,6 @@ $(document).ready(function() {
   });
 
   const loadTweets = function() {
-    // fetch tweets from http://localhost:8080/tweets
-    // use jQuery to make a request to /tweets
-    // receive array of tweets as JSON
     $.ajax({
       method: 'GET',
       url: '/tweets'
