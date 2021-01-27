@@ -45,10 +45,10 @@ $(document).ready(function() {
       method: 'GET',
       url: '/tweets'
     })
-      .then(data => {
+      .done(data => {
         renderTweets(data);
       })
-      .catch(err => {
+      .fail(err => {
         console.log(err);
       })
   };
@@ -83,7 +83,7 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetSerialized
       })
-        .then(data => {
+        .done(data => {
           loadTweets();
           $tweetBox.val('');
           $counter.val(140);
@@ -93,7 +93,7 @@ $(document).ready(function() {
             $(errorBox).removeClass('error-box');
           })
         })
-        .catch(err => {
+        .fail(err => {
           console.log(err)
         })
     }
