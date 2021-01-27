@@ -6,13 +6,13 @@
 
 $(document).ready(function() {
   const escape = function(tweetContent) {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.appendChild(document.createTextNode(tweetContent));
     return div.innerHTML;
   };
 
   const createTweetElement = function(tweetObj) {
-    let $tweet = `
+    const $tweet = `
     <article class="tweet">
       <header>
         <img src="${tweetObj.user.avatars}">
@@ -35,8 +35,8 @@ $(document).ready(function() {
 
   const renderTweets = function(arrTweetObjs) {
     for (let tweetObj of arrTweetObjs) {
-      let $tweet = createTweetElement(tweetObj);
-      $('#tweets-container').prepend($tweet);
+      const tweet = createTweetElement(tweetObj);
+      $('#tweets-container').prepend(tweet);
     }
   };
 
@@ -53,25 +53,17 @@ $(document).ready(function() {
 
   $('.tweet-form').submit(function(event) {
     event.preventDefault();
-    // first validate for empty/long tweets - add/remove classes to change style
+    // first validate for empty/long tweets
     const $tweetBox = $(this).find('#tweet-text');
     const $counter = $(this).find('.counter');
-    const errorBox = $(this).siblings('.errors');
-    const emptyMsg = $(this).siblings('.tweet-text');
-    const longMsg = $(this).siblings('.long-tweet');
+    const emptyMsg = $(this).siblings('.empty-tweet-err');
+    const longMsg = $(this).siblings('.long-tweet-err');
     if ($tweetBox.val() === "") {
-      $(emptyMsg).slideDown(100, () => {
-        
-        // $(errorBox).removeClass('error-box');
-        // $(emptyMsg).addClass('error-box');
-        // $(longMsg).removeClass('show-error');
-      });
+      $(longMsg).slideUp(10);
+      $(emptyMsg).slideDown(200);
     } else if ($tweetBox.val().length > 140) {
-      $(longMsg).slideDown(100, () => {
-        // $(errorBox).addClass('error-box');
-        $(longMsg).removeClass('error-box');
-        // $(emptyMsg).removeClass('show-error');
-      });
+      $(emptyMsg).slideUp(10);
+      $(longMsg).slideDown(200);
     } else {
       const tweetSerialized = $tweetBox.serialize();
       $.ajax({
@@ -83,11 +75,8 @@ $(document).ready(function() {
           loadTweets();
           $tweetBox.val('');
           $counter.val(140);
-          $(errorBox).slideUp(100, () => {
-            $(emptyMsg).removeClass('show-error');
-            $(longMsg).removeClass('show-error');
-            $(errorBox).removeClass('error-box');
-          });
+          $(emptyMsg).slideUp(100);
+          $(longMsg).slideUp(100);
         })
         .fail(err => console.log(err));
     }
