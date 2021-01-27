@@ -39,7 +39,7 @@
       </div>
       <br>
       <div>
-        <h2>Rebecca Chen</h2>
+        <h2>Jane Doe</h2>
       </div>
     </header>
 
@@ -47,6 +47,10 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <h4 class="tweet-text">You cannot send an empty tweet!</h4>
+        <div class="errors long-tweet">
+          <h4 class="tweet-text">Your message is too long! Keep it under 140 characters.</h4>
+        </div>
         <form action="/tweets/" method="POST" class="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
