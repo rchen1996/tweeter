@@ -5,17 +5,8 @@
   justify-content: center;
   align-items: center;
 }
-/* 
-div.errors {
-  border-radius: 10px;
-  background: #FFDCDC;
-  margin: 1em;
-  border: 1px solid red;
-  width: 80%;
-  display: none;
-} */
 
-.tweet-text {
+.empty-tweet-err {
   color: #941C1C;
   font-weight: 300;
   border-radius: 10px;
@@ -29,16 +20,19 @@ div.errors {
   padding-bottom: 1em;
 }
 
-div.error-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.long-tweet-err {
+  color: #941C1C;
+  font-weight: 300;
+  border-radius: 10px;
+  background: #FFDCDC;
+  margin: 1em;
+  border: 1px solid red;
+  width: 80%;
+  display: none;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
-/* 
-.show-error {
-  display: flex;
-} */
 
 form {
   display: flex;
