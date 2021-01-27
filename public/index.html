@@ -47,10 +47,8 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <h4 class="tweet-text">You cannot send an empty tweet!</h4>
-        <div class="errors long-tweet">
-          <h4 class="tweet-text">Your message is too long! Keep it under 140 characters.</h4>
-        </div>
+        <h4 class="empty-tweet-err">You cannot send an empty tweet!</h4>
+        <h4 class="long-tweet-err">Your message is too long! Keep it under 140 characters.</h4>
         <form action="/tweets/" method="POST" class="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
