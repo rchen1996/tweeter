@@ -9,7 +9,7 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(tweetContent));
     return div.innerHTML;
-  }
+  };
 
   const createTweetElement = function(tweetObj) {
     let $tweet = `
@@ -45,12 +45,8 @@ $(document).ready(function() {
       method: 'GET',
       url: '/tweets'
     })
-      .done(result => {
-        renderTweets(result);
-      })
-      .fail(err => {
-        console.log(err);
-      })
+      .done(result => renderTweets(result))
+      .fail(err => console.log(err));
   };
 
   loadTweets();
@@ -66,16 +62,16 @@ $(document).ready(function() {
     if ($tweetBox.val() === "") {
       $(emptyMsg).slideDown(100, () => {
         
-        // $(errorBox).removeClass('error-box'); 
+        // $(errorBox).removeClass('error-box');
         // $(emptyMsg).addClass('error-box');
         // $(longMsg).removeClass('show-error');
-      })
+      });
     } else if ($tweetBox.val().length > 140) {
       $(longMsg).slideDown(100, () => {
-        // $(errorBox).addClass('error-box'); 
+        // $(errorBox).addClass('error-box');
         $(longMsg).removeClass('error-box');
         // $(emptyMsg).removeClass('show-error');
-      })
+      });
     } else {
       const tweetSerialized = $tweetBox.serialize();
       $.ajax({
@@ -83,19 +79,17 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetSerialized
       })
-      .done(result => {
-        loadTweets();
-        $tweetBox.val('');
-        $counter.val(140);
-        $(errorBox).slideUp(100, () => {
-          $(emptyMsg).removeClass('show-error');
-          $(longMsg).removeClass('show-error');
-          $(errorBox).removeClass('error-box');
+        .done(result => {
+          loadTweets();
+          $tweetBox.val('');
+          $counter.val(140);
+          $(errorBox).slideUp(100, () => {
+            $(emptyMsg).removeClass('show-error');
+            $(longMsg).removeClass('show-error');
+            $(errorBox).removeClass('error-box');
+          });
         })
-      })
-      .fail(err => {
-        console.log(err)
-      })
+        .fail(err => console.log(err));
     }
   });
 });
