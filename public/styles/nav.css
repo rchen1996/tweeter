@@ -30,3 +30,20 @@ span.logo {
 #compose:hover {
   cursor: pointer;
 }
+
+#to-top:hover {
+  cursor: pointer;
+}
+
+#to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  outline: none;
+  background-color: #EF626C;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin: 0.5em;
+  display: none;
+}
