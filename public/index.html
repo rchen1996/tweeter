@@ -21,6 +21,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/compose-button.js"></script>
 
     <!-- External Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,7 +31,11 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>Tweeter</span>
+      <span class="logo">Tweeter</span>
+      <button id="compose">
+        <h4>Write</h4>
+        <p>a new tweet</p>
+      </button>
     </nav>
 
     <header class="profile">
@@ -46,7 +51,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <h4 class="empty-tweet-err">You cannot send an empty tweet!</h4>
         <h4 class="long-tweet-err">Your message is too long! Keep it under 140 characters.</h4>
         <form action="/tweets/" method="POST" class="tweet-form">
