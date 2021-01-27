@@ -45,8 +45,8 @@ $(document).ready(function() {
       method: 'GET',
       url: '/tweets'
     })
-      .done(data => {
-        renderTweets(data);
+      .done(result => {
+        renderTweets(result);
       })
       .fail(err => {
         console.log(err);
@@ -83,19 +83,19 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetSerialized
       })
-        .done(data => {
-          loadTweets();
-          $tweetBox.val('');
-          $counter.val(140);
-          $(errorBox).slideUp(100, () => {
-            $(emptyMsg).removeClass('show-error');
-            $(longMsg).removeClass('show-error');
-            $(errorBox).removeClass('error-box');
-          })
+      .done(result => {
+        loadTweets();
+        $tweetBox.val('');
+        $counter.val(140);
+        $(errorBox).slideUp(100, () => {
+          $(emptyMsg).removeClass('show-error');
+          $(longMsg).removeClass('show-error');
+          $(errorBox).removeClass('error-box');
         })
-        .fail(err => {
-          console.log(err)
-        })
+      })
+      .fail(err => {
+        console.log(err)
+      })
     }
   });
 });
