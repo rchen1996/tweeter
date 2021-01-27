@@ -5,6 +5,12 @@
  */
 
 $(document).ready(function() {
+  const escape = function(tweetContent) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(tweetContent));
+    return div.innerHTML;
+  }
+
   const createTweetElement = function(tweetObj) {
     let $tweet = `
     <article class="tweet">
@@ -13,7 +19,7 @@ $(document).ready(function() {
         <h4 class="user">${tweetObj.user.name}</h4>
         <p class="handle">${tweetObj.user.handle}</p>
       </header>
-      <p class="tweet-content">${tweetObj.content.text}</p>
+      <p class="tweet-content">${escape(tweetObj.content.text)}</p>
       <footer>
         <p class="timestamp">${tweetObj['created_at']}</p>
         <div class="icons">
@@ -34,29 +40,6 @@ $(document).ready(function() {
     }
   };
 
-  $('.tweet-form').submit(function(event) {
-    event.preventDefault();
-    const $tweetBox = $(this).find('#tweet-text');
-    if ($tweetBox.val() === "") {
-      alert('You cannot send an empty tweet!')
-    } else if ($tweetBox.val().length > 140) {
-      alert('Your message is too long!')
-    } else {
-      const tweetSerialized = $tweetBox.serialize();
-      $.ajax({
-        method: 'POST',
-        url: '/tweets',
-        data: tweetSerialized
-      })
-        .then(data => {
-          console.log('Success')
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    }
-  });
-
   const loadTweets = function() {
     $.ajax({
       method: 'GET',
@@ -71,5 +54,31 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+  $('.tweet-form').submit(function(event) {
+    event.preventDefault();
+    const $tweetBox = $(this).find('#tweet-text');
+    const $counter = $(this).find('.counter');
+    if ($tweetBox.val() === "") {
+      alert('You cannot send an empty tweet!')
+    } else if ($tweetBox.val().length > 140) {
+      alert('Your message is too long!')
+    } else {
+      const tweetSerialized = $tweetBox.serialize();
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: tweetSerialized
+      })
+        .then(data => {
+          loadTweets();
+          $tweetBox.val('');
+          $counter.val(140);
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  });
 });
 
