@@ -57,12 +57,25 @@ $(document).ready(function() {
 
   $('.tweet-form').submit(function(event) {
     event.preventDefault();
+    // first validate for empty/long tweets - add/remove classes to change style
     const $tweetBox = $(this).find('#tweet-text');
     const $counter = $(this).find('.counter');
+    const errorBox = $(this).siblings('.errors');
+    const emptyMsg = $(this).siblings('.tweet-text');
+    const longMsg = $(this).siblings('.long-tweet');
     if ($tweetBox.val() === "") {
-      alert('You cannot send an empty tweet!')
+      $(emptyMsg).slideDown(100, () => {
+        
+        // $(errorBox).removeClass('error-box'); 
+        // $(emptyMsg).addClass('error-box');
+        // $(longMsg).removeClass('show-error');
+      })
     } else if ($tweetBox.val().length > 140) {
-      alert('Your message is too long!')
+      $(longMsg).slideDown(100, () => {
+        // $(errorBox).addClass('error-box'); 
+        $(longMsg).removeClass('error-box');
+        // $(emptyMsg).removeClass('show-error');
+      })
     } else {
       const tweetSerialized = $tweetBox.serialize();
       $.ajax({
@@ -74,6 +87,11 @@ $(document).ready(function() {
           loadTweets();
           $tweetBox.val('');
           $counter.val(140);
+          $(errorBox).slideUp(100, () => {
+            $(emptyMsg).removeClass('show-error');
+            $(longMsg).removeClass('show-error');
+            $(errorBox).removeClass('error-box');
+          })
         })
         .catch(err => {
           console.log(err)
