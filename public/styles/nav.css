@@ -6,11 +6,27 @@ nav {
   background-color: #4056a1;
   color: #ffffff;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
-span {
+span.logo {
   font-family: 'Bungee', sans-serif;
   margin: 1.5em;
+}
+
+#compose {
+  margin: 1.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+
+#compose h4 {
+  margin: 0.25em;
+}
+
+#compose:hover {
+  cursor: pointer;
 }
