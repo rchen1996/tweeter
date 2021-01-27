@@ -35,6 +35,7 @@ article.tweet header .handle {
 
 article.tweet p.tweet-content {
   margin: 1em;
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {
