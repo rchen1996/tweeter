@@ -1,5 +1,10 @@
 .new-tweet {
   width: 100%;
+  margin-top: 2em;
+  display: none;
+}
+
+.new-tweet-show {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +18,7 @@
   background: #FFDCDC;
   margin: 1em;
   border: 1px solid red;
-  width: 80%;
+  align-content: center;
   display: none;
   text-align: center;
   padding-top: 1em;
@@ -27,7 +32,7 @@
   background: #FFDCDC;
   margin: 1em;
   border: 1px solid red;
-  width: 80%;
+  align-content: center;
   display: none;
   text-align: center;
   padding-top: 1em;
