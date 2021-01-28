@@ -27,11 +27,7 @@
   padding-bottom: 1em;
 }
 
-.empty-tweet-err {
-  @include errorMsg();
-}
-
-.long-tweet-err {
+.empty-tweet-err, .long-tweet-err {
   @include errorMsg();
 }
 
