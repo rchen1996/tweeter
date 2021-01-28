@@ -3,7 +3,8 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #4056a1;
+  background-color: #EF626C;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -21,6 +22,8 @@ span.logo {
   display: flex;
   align-items: center;
   outline: none;
+  background-color: #EF626C;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 #compose h4 {
@@ -46,4 +49,16 @@ span.logo {
   height: 75px;
   margin: 0.5em;
   display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
+
+  #compose {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }
