@@ -1,8 +1,8 @@
 header.profile {
   height: 400px;
   width: 100%;
-  background-color: #ECEEFF;
-  background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+  background-color: #EF626C;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   margin-top: 120px;
 }
 
@@ -10,4 +10,32 @@ header div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header div.profile-pic {
+  padding-top: 1em;
+  margin-bottom: none;
+}
+
+header div.profile-name {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+header .first-name {
+  padding-right: 0.25em;
+}
+
+header .last-name {
+  font-weight: 300;
+}
+
+@media screen and (min-width: 1024px) {
+  header.profile {
+    width: 33%;
+    margin-top: 250px;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
 }
