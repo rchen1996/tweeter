@@ -12,6 +12,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(tweetObj) {
+    const tweetDate = new Date(tweetObj['created_at']);
     const $tweet = `
     <article class="tweet">
       <header>
@@ -21,7 +22,7 @@ $(document).ready(function() {
       </header>
       <p class="tweet-content">${escape(tweetObj.content.text)}</p>
       <footer>
-        <p class="timestamp">${tweetObj['created_at']}</p>
+        <p class="timestamp">${jQuery.timeago(tweetDate)}</p>
         <div class="icons">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
