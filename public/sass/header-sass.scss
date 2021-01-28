@@ -8,10 +8,14 @@ header.profile {
   margin-top: 120px;
 }
 
-header div {
+@mixin verticalAlign($property) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $property;
+  align-items: $property;
+}
+
+header div {
+  @include verticalAlign(center);
 }
 
 header div.profile-pic {
