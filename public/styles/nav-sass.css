@@ -10,13 +10,11 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-
-span.logo {
+nav .logo {
   font-family: "Bungee", sans-serif;
   margin: 1.5em;
 }
-
-#compose {
+nav #compose {
   margin: 1.5em;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
@@ -25,12 +23,10 @@ span.logo {
   background-color: #EF626C;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
-
-#compose h4 {
+nav #compose h4 {
   margin: 0.25em;
 }
-
-#compose:hover {
+nav #compose:hover {
   cursor: pointer;
 }
 
@@ -56,8 +52,7 @@ span.logo {
     background-color: #4056a1;
     background-image: none;
   }
-
-  #compose {
+  nav #compose {
     background-color: #4056a1;
     background-image: none;
   }
