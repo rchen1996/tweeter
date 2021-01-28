@@ -31,3 +31,15 @@ body {
 main {
   width: 90%;
 }
+
+@media screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  main {
+    width: 67%;
+    margin-top: 227px;
+  }
+}
