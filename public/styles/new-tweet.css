@@ -80,3 +80,10 @@ output {
 .counter-negative {
   color: #f25244;
 }
+
+@media screen and (min-width: 1024px) {
+  .new-tweet {
+    margin: 1em 2em;
+    width: 90%;
+  }
+}
