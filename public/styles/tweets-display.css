@@ -57,3 +57,9 @@ article.tweet footer .icons {
 article.tweet .fas {
   margin: 0.5em;
 }
+
+@media screen and (min-width: 1024px) {
+  article.tweet {
+    margin: 1em 2em;
+  }
+}
