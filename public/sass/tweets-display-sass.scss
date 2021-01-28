@@ -54,6 +54,11 @@ article.tweet footer .timestamp {
 
 article.tweet footer .icons {
   color: base.$nav-color;
+  display: none;
+}
+
+article.tweet:hover footer .icons {
+  display: block;
 }
 
 article.tweet .fas {

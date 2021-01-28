@@ -52,6 +52,11 @@ article.tweet footer .timestamp {
 
 article.tweet footer .icons {
   color: #4056a1;
+  display: none;
+}
+
+article.tweet:hover footer .icons {
+  display: block;
 }
 
 article.tweet .fas {
