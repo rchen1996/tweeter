@@ -1,0 +1,66 @@
+nav {
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #EF626C;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span.logo {
+  font-family: "Bungee", sans-serif;
+  margin: 1.5em;
+}
+
+#compose {
+  margin: 1.5em;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  align-items: center;
+  outline: none;
+  background-color: #EF626C;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+#compose h4 {
+  margin: 0.25em;
+}
+
+#compose:hover {
+  cursor: pointer;
+}
+
+#to-top:hover {
+  cursor: pointer;
+}
+
+#to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  outline: none;
+  background-color: #EF626C;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin: 0.5em;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
+
+  #compose {
+    background-color: #4056a1;
+    background-image: none;
+  }
+}
+
+/*# sourceMappingURL=nav-sass.css.map */

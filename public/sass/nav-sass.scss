@@ -1,0 +1,66 @@
+@use 'base';
+
+nav {
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: base.$accent-color;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  color: base.$accent-text;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span.logo {
+  font-family: base.$nav-font;
+  margin: 1.5em;
+}
+
+#compose {
+  margin: 1.5em;
+  font-family: base.$main-font;
+  display: flex;
+  align-items: center;
+  outline: none;
+  background-color: base.$accent-color;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+#compose h4 {
+  margin: 0.25em;
+}
+
+#compose:hover {
+  cursor: pointer;
+}
+
+#to-top:hover {
+  cursor: pointer;
+}
+
+#to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  outline: none;
+  background-color: base.$accent-color;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin: 0.5em;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: base.$nav-color;
+    background-image: none;
+  }
+
+  #compose {
+    background-color: base.$nav-color;
+    background-image: none;
+  }
+}
