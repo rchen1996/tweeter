@@ -2,7 +2,6 @@ $(document).ready(function() {
   // hide/show new tweet box
   $('#compose').click(function() {
     $('.new-tweet').slideToggle(300, function() {
-      $('.new-tweet').addClass('new-tweet-show');
       $('#tweet-text').focus().select();
     });
   });
